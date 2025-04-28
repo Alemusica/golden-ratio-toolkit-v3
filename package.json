@@ -1,40 +1,48 @@
 {
-    "name": "golden-ratio-toolkit-v3",
-    "version": "3.0.0-alpha.0",
-    "description": "Utilities, React hooks and a Tailwind plugin for golden‑ratio scales",
-    "type": "module",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-      ".": {
-        "import": "./dist/index.js",
-        "require": "./dist/index.cjs"
-      }
-    },
-    "files": ["dist"],
-    "sideEffects": false,
-    "scripts": {
-      "build": "tsup",
-      "test": "vitest",
-      "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
-      "prepare": "husky install"
-    },
-    "repository": "github:alemusica/golden-ratio-toolkit-v3",
-    "keywords": ["golden-ratio", "design-system", "tailwind", "typography", "spacing"],
-    "author": "Alemusica <you@example.com>",
-    "license": "MIT",
-    "devDependencies": {
-      "@typescript-eslint/eslint-plugin": "^7.0.0",
-      "@typescript-eslint/parser": "^7.0.0",
-      "eslint": "^9.0.0",
-      "eslint-config-prettier": "^9.1.0",
-      "eslint-plugin-import": "^2.29.1",
-      "husky": "^9.0.0",
-      "prettier": "^3.2.4",
-      "tailwindcss": "^3.4.4",
-      "tsup": "^8.0.2",
-      "typescript": "^5.4.5",
-      "vitest": "^1.4.2"
+  "name": "golden-ratio-toolkit-v3",
+  "version": "3.0.0-alpha.0",
+  "description": "Utilities, React hooks and a Tailwind plugin for golden‑ratio scales",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
+    "prepare": "npm run build && husky install"
+  },
+  "repository": "github:alemusica/golden-ratio-toolkit-v3",
+  "keywords": [
+    "golden-ratio",
+    "design-system",
+    "tailwind",
+    "typography",
+    "spacing"
+  ],
+  "author": "Alemusica <you@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^9.0.0",
+    "prettier": "^3.2.4",
+    "tailwindcss": "^3.4.4",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.4.2"
   }
+}
