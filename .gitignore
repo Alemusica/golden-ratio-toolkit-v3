@@ -1,1 +1,10 @@
+# node & prod builds
+node_modules/
+dist/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# macOS
 .DS_Store
