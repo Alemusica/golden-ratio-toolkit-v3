@@ -1,33 +1,35 @@
-# 🦋 Golden‑Ratio Toolkit *v3.0*
+# 🦋 Golden-Ratio Toolkit *v3.0*
 
-A **tiny, tree‑shakable TypeScript library** for building interfaces and design‑systems whose rhythm, spacing and typography all follow the golden ratio (φ ≈ 1 .618).
+A **tiny, tree-shakable TypeScript library** for building interfaces and design-systems whose rhythm, spacing and typography all follow the golden ratio (φ ≈ 1 .618).
 
-* **Zero‑dependency core** (ESM + CJS)
-* **Cache‑backed math** for lightning‑fast runtime
-* **High‑precision mode** for scientific or generative‑art work
+* **Zero-dependency core** (ESM + CJS)
+* **Cache-backed math** for lightning-fast runtime
+* **High-precision mode** for scientific or generative-art work
 * **Unit helpers, scales, responsive clamp**
-* **Context‑aware tokens** that keep headings, body‑copy and gaps harmonious
-* **First‑class React hooks**
-* **Tailwind / CSS‑var generators**
-* Complete **Vitest suite** and dual‑build via *tsup*
+* **Context-aware tokens** that keep headings, body-copy and gaps harmonious
+* **First-class React hooks**
+* **Tailwind / CSS-var generators**
+* Complete **Vitest suite** and dual-build via *tsup*
 
 ---
 
 ## Installation
 
-### Via GitHub (recommended until npm publish)
+### Via GitHub (until npm publish)
 
 ```bash
-npm install github:Alemusica/golden-ratio-toolkit-v3         # main branch
-# or a specific tag
-npm install github:Alemusica/golden-ratio-toolkit-v3#v3.0.0
+# default branch
+npm install github:alemusica/golden-ratio-toolkit-v3
+
+# specific tag
+npm install github:alemusica/golden-ratio-toolkit-v3#v3.0.0
 ```
 
 <details>
-<summary>Planned npm publish</summary>
+<summary>Planned npm publish</summary>
 
 ```bash
-npm i golden-ratio-toolkit   # or pnpm / yarn
+npm install golden-ratio-toolkit-v3   # or pnpm / yarn
 ```
 
 > The package ships as **ESM** (`dist/index.js`) and **CommonJS** (`dist/index.cjs`); typings included.
@@ -35,7 +37,7 @@ npm i golden-ratio-toolkit   # or pnpm / yarn
 
 ---
 
-## Quick start
+## Quick start
 
 ```ts
 import { rem, phiClamp, createSpacingScale } from 'golden-ratio-toolkit-v3';
@@ -84,23 +86,23 @@ module.exports = {
 | Category      | Functions / constants |
 |---------------|-----------------------|
 | **Math**      | `PHI`, `PHI_SMALL`, `PHI_SQUARED`, `phi(power)`, `phiPrecise(power, digits)` |
-| **Units**     | `toUnit(unit, precision)`, **shortcuts** `rem`, `px`, `em`, `vw`, `vh`, `pct` |
+| **Units**     | `toUnit(unit, precision)`, **shortcuts** `rem`, `px`, `em`, `vw`, `vh`, `pct` |
 | **Responsive**| `phiClamp(min, powerSpan, minW, maxW, unit, precision)` |
 | **Scales**    | `createSpacingScale(base?, prec?)`, `createTypoScale(base?, prec?)` |
-| **Contextual**| `createContextScale(map, base?, unit?, prec?)`,<br>`getContextRatio(map, a, b)`, `getContextUnit(map, a, b, base?, unit?, prec?)` |
+| **Contextual**| `createContextScale(map, base?, unit?, prec?)`, `getContextRatio(map, a, b)`, `getContextUnit(map, a, b, base?, unit?, prec?)` |
 | **Hash helper** | `hashContext(map)` – stable key for React deps |
 | **CSS / build** | `phiCSS(prec)`, `createTailwindPlugin()` |
 | **Hooks**       | `usePhi`, `usePhiSpacing`, `useContextScale`, `useContextUnit` |
-| **Precision**   | `phiPrecise()` for 1‑15 significant digits |
+| **Precision**   | `phiPrecise()` for 1-15 significant digits |
 
 ---
 
-## Contextual scales 🌻
+## Contextual scales 🌻
 
 Keep H1, H2 and body copy perpetually harmonious:
 
 ```ts
-const ratioMap = { h1: 3, h2: 2, body: 0 };   // φ‑powers
+const ratioMap = { h1: 3, h2: 2, body: 0 };   // φ-powers
 const tokens   = createContextScale(ratioMap);
 // { h1: '4.236rem', h2: '2.618rem', body: '1rem' }
 
@@ -111,7 +113,7 @@ Use `hashContext(ratioMap)` as a dependency key so hooks don’t recalc on every
 
 ---
 
-## High‑precision mode 🔬
+## High-precision mode 🔬
 
 ```ts
 phiPrecise(1, 12);  // 1.61803398875  (12 significant digits)
@@ -121,18 +123,18 @@ Ideal for algorithmic art where rounding errors are visible.
 
 ---
 
-## Bundling & tree‑shaking
+## Bundling & tree-shaking
 
 Built with **tsup**:
 
 ```
 dist/
-  golden-ratio.esm.js   (ESM, side‑effects free)
-  golden-ratio.cjs.js   (CommonJS)
-  golden-ratio.d.ts
+  index.js        (ESM, side-effects-free)
+  index.cjs       (CommonJS)
+  index.d.ts
 ```
 
-`package.json` sets proper `exports` + `sideEffects:false` so unused helpers drop out of your bundle.
+`package.json` sets proper `exports` + `sideEffects:false` so unused helpers drop out of your bundle.
 
 ---
 
@@ -142,7 +144,7 @@ dist/
 pnpm test
 ```
 
-Coverage: constants, cache hits, custom units, clamp edge‑cases, contextual maps, precision paths.
+Coverage: constants, cache hits, custom units, clamp edge-cases, contextual maps, precision paths.
 
 ---
 
@@ -157,4 +159,4 @@ Coverage: constants, cache hits, custom units, clamp edge‑cases, contextual ma
 
 ## License
 
-MIT © 2025 Alessio Ivoy Cazzaniga
+MIT © 2025 Alessio Ivoy Cazzaniga
