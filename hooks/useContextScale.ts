@@ -5,7 +5,7 @@ import {
   getContextUnit,
   UnitString,
   hashContext
-} from '../lib/golden-ratio';
+} from '../src/lib/golden-ratio';
 
 export const useContextScale = <T extends string>(
   map: Record<T, number>,

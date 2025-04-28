@@ -1,6 +1,6 @@
 
 import { useMemo } from 'react';
-import { PHI, PHI_SMALL, phi, rem, vw, vh } from '../lib/golden-ratio';
+import { PHI, PHI_SMALL, phi, rem, vw, vh } from '../src/lib/golden-ratio';
 
 export const usePhi = (base = 1) =>
   useMemo(()=>({

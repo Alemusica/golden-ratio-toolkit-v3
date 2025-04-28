@@ -7,7 +7,7 @@ import {
   createTypoScale, createSpacingScale,
   phiClamp, toUnit,
   createContextScale, getContextRatio, getContextUnit
-} from '../lib/golden-ratio';
+} from '../src/lib/golden-ratio';
 
 describe('Golden-ratio utilities', () => {
   it('constants', () => {
