@@ -3,9 +3,9 @@
 // File: lib/golden-ratio.ts  ✧  Golden‑Ratio Toolkit (v3.0)
 // ──────────────────────────────────────────────────────────────
 
-export const PHI = 1.618033988749895 as const;
-export const PHI_SMALL = 1 / PHI as const;            // φ⁻¹
-export const PHI_SQUARED = PHI * PHI as const;        // φ²
+export const PHI = 1.618033988749895;
+export const PHI_SMALL = 1 / PHI;            // φ⁻¹
+export const PHI_SQUARED = PHI * PHI;        // φ²
 
 // ─── core math with cache ────────────────────────────────────
 const _cache: Record<number, number> = {};
@@ -50,7 +50,7 @@ export const phiClamp = (
 // ─── scales ──────────────────────────────────────────────────
 export const createSpacingScale = (base = 0.25, prec = 3) => {
   const toRem = toUnit('rem', prec);
-  const keys = ['0','px','0.5','1','2','3','4','5','6','8','10','12','16','20','24','32'] as const;
+  const keys = ['0','px','0.5','1','2','3','4','5','6','8','10','12','16','20','24','32'];
   const powers = [Number.NEGATIVE_INFINITY,Number.NEGATIVE_INFINITY,-1,0,1,2,3,4,5,6,7,8,9,10,11,12];
   return keys.reduce<Record<string,string>>((o,k,i)=>{
     if(k==='0') o[k]='0';
@@ -62,7 +62,7 @@ export const createSpacingScale = (base = 0.25, prec = 3) => {
 
 export const createTypoScale = (base = 1, prec = 3) => {
   const toRem = toUnit('rem', prec);
-  const keys = ['3xs','2xs','xs','sm','base','md','lg','xl','2xl','3xl','4xl','5xl'] as const;
+  const keys = ['3xs','2xs','xs','sm','base','md','lg','xl','2xl','3xl','4xl','5xl'];
   const powers = [-3,-2,-1,-0.5,0,0.5,1,1.5,2,3,4,5];
   return keys.reduce<Record<string,string>>((o,k,i)=>(o[k]=toRem(base,powers[i]),o),{});
 };

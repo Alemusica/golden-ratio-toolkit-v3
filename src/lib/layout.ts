@@ -74,10 +74,10 @@ export interface GoldenRadiusOptions {
  * Example – a 400×250 card: `minSide = 250`, radius = 250 / φ² ≈ 95px.
  */
 export function goldenCornerRadius(
-  rect: GoldenRect,
+  { width, height }: GoldenRect,
   opts: GoldenRadiusOptions = {}
 ): number {
   const { power = 2 } = opts;
-  const minSide = Math.min(rect.width, rect.height);
+  const minSide = Math.min(width, height);
   return minSide / phi(power);
 }
