@@ -20,7 +20,7 @@
     "build": "tsup",
     "test": "vitest",
     "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
-    "prepare": "npm run build && (git rev-parse --is-inside-work-tree >/dev/null 2>&1 && npx husky install || echo \"skip husky\")"
+    "prepare": "husky install"
   },
   "repository": "github:alemusica/golden-ratio-toolkit-v3",
   "keywords": [
